@@ -12,6 +12,8 @@ import {
 import { Link } from "react-router-dom"
 
 import monstera from "../assets/plants/monstera.jpg"
+import peaceLily from "../assets/plants/peace-lily.jpg"
+import aloeVera from "../assets/plants/aloe-vera.jpg"
 
 function GardeningTips() {
   const tips = [
@@ -74,33 +76,20 @@ function GardeningTips() {
 
   return (
     <main className="bg-[#fbfaf6]">
-      {/* Hero */}
+      {/* HERO */}
       <section className="relative overflow-hidden bg-[#f1f3eb]">
         <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-[#dfe9dc] blur-3xl" />
-
         <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-[#e7dcc9] blur-3xl" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-16">
-          {/* Left Content */}
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -30,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.6,
-            }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
             <div className="mb-5 flex items-center gap-2 text-[#315c3a]">
-              <Leaf
-                size={18}
-                strokeWidth={1.8}
-              />
+              <Leaf size={18} strokeWidth={1.8} />
 
               <span className="text-xs font-semibold uppercase tracking-[0.2em]">
                 Plant Care Guide
@@ -135,26 +124,13 @@ function GardeningTips() {
             </div>
           </motion.div>
 
-          {/* Right Visual */}
           <motion.div
-            initial={{
-              opacity: 0,
-              x: 30,
-              scale: 0.96,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.7,
-              delay: 0.1,
-            }}
+            initial={{ opacity: 0, x: 30, scale: 0.96 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
             className="relative mx-auto w-full max-w-lg"
           >
             <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[#dfe9dc] blur-2xl" />
-
             <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-[#e7dcc9] blur-2xl" />
 
             <div className="relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white p-3 shadow-2xl shadow-[#315c3a]/10">
@@ -187,7 +163,6 @@ function GardeningTips() {
               </div>
             </div>
 
-            {/* Floating Badge */}
             <div className="absolute -left-4 top-8 rounded-2xl border border-white/70 bg-white px-4 py-3 shadow-xl sm:-left-5">
               <p className="text-xs text-stone-400">
                 Plantora
@@ -201,23 +176,13 @@ function GardeningTips() {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* INTRO */}
       <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl text-center"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#78907b]">
@@ -237,7 +202,7 @@ function GardeningTips() {
         </motion.div>
       </section>
 
-      {/* Tips */}
+      {/* TIPS */}
       <section className="mx-auto max-w-7xl px-5 pb-14 sm:px-8 lg:px-10 lg:pb-20">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {tips.map((tip, index) => {
@@ -246,31 +211,18 @@ function GardeningTips() {
             return (
               <motion.article
                 key={tip.title}
-                initial={{
-                  opacity: 0,
-                  y: 30,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{
                   duration: 0.5,
                   delay: index * 0.08,
                 }}
-                whileHover={{
-                  y: -6,
-                }}
+                whileHover={{ y: -6 }}
                 className="rounded-[2rem] border border-stone-200/70 bg-white p-7 shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-[#315c3a]/10"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#edf3ec] text-[#315c3a]">
-                  <Icon
-                    size={22}
-                    strokeWidth={1.7}
-                  />
+                  <Icon size={22} strokeWidth={1.7} />
                 </div>
 
                 <h3 className="mt-6 text-xl font-semibold text-[#243b2a]">
@@ -305,25 +257,15 @@ function GardeningTips() {
         </div>
       </section>
 
-      {/* Quick Routine */}
+      {/* ROUTINE SECTION */}
       <section className="border-y border-stone-200/70 bg-white">
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
           <div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <motion.div
-              initial={{
-                opacity: 0,
-                x: -25,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
+              initial={{ opacity: 0, x: -25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="max-w-xl"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#78907b]">
@@ -349,20 +291,10 @@ function GardeningTips() {
             </motion.div>
 
             <motion.div
-              initial={{
-                opacity: 0,
-                x: 25,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
+              initial={{ opacity: 0, x: 25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="grid gap-4 sm:grid-cols-3"
             >
               <div className="rounded-3xl bg-[#f1f3eb] p-6">
@@ -411,45 +343,197 @@ function GardeningTips() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* IMPROVED CTA */}
       <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
-          className="overflow-hidden rounded-[2rem] bg-[#243b2a] px-6 py-12 text-center sm:px-10 lg:px-16 lg:py-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="relative overflow-hidden rounded-[2.5rem] bg-[#edf3ec]"
         >
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white">
-            <Sprout size={22} />
+          {/* Decorative background */}
+          <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-[#dfe9dc] blur-3xl" />
+
+          <div className="absolute -bottom-24 right-10 h-72 w-72 rounded-full bg-[#e7dcc9] blur-3xl" />
+
+          <div className="relative grid items-center gap-10 px-6 py-10 sm:px-10 sm:py-12 lg:grid-cols-[1fr_0.9fr] lg:px-14 lg:py-14">
+            {/* CTA CONTENT */}
+            <div className="relative z-10 max-w-xl">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#315c3a] text-white">
+                <Sprout size={23} />
+              </div>
+
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#78907b]">
+                Your plant journey
+              </p>
+
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#243b2a] sm:text-4xl lg:text-5xl">
+                Ready to grow
+                <span className="block text-[#315c3a]">
+                  something beautiful?
+                </span>
+              </h2>
+
+              <p className="mt-5 max-w-lg text-sm leading-7 text-stone-500 sm:text-base">
+                Explore our collection and find a beautiful
+                plant that fits your space, lifestyle, and
+                everyday routine.
+              </p>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link
+                  to="/plants"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#315c3a] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#315c3a]/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#243b2a]"
+                >
+                  Explore Plants
+                  <ArrowRight size={17} />
+                </Link>
+
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#315c3a]/15 bg-white px-6 py-3.5 text-sm font-semibold text-[#315c3a] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f7f8f3]"
+                >
+                  About Plantora
+                </Link>
+              </div>
+
+              <div className="mt-7 flex flex-wrap items-center gap-5 text-xs text-stone-500">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-[#315c3a]" />
+                  Beginner friendly
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-[#315c3a]" />
+                  Easy plant care
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-[#315c3a]" />
+                  Beautiful spaces
+                </div>
+              </div>
+            </div>
+
+            {/* IMAGE COLLAGE */}
+            <div className="relative mx-auto h-[360px] w-full max-w-md sm:h-[400px]">
+              <div className="absolute right-4 top-4 h-56 w-56 rounded-full bg-[#dfe9dc] blur-2xl" />
+
+              {/* Monstera */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  x: 30,
+                  rotate: 2,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  rotate: 2,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.15,
+                }}
+                className="absolute right-0 top-0 h-64 w-48 overflow-hidden rounded-[2rem] border-4 border-white shadow-xl sm:h-72 sm:w-52"
+              >
+                <img
+                  src={monstera}
+                  alt="Monstera plant"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </motion.div>
+
+              {/* Peace Lily */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  x: -25,
+                  rotate: -5,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  rotate: -5,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.3,
+                }}
+                className="absolute bottom-2 left-2 h-56 w-44 overflow-hidden rounded-[2rem] border-4 border-white shadow-xl sm:h-64 sm:w-48"
+              >
+                <img
+                  src={peaceLily}
+                  alt="Peace Lily plant"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </motion.div>
+
+              {/* Aloe Vera */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.8,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.45,
+                }}
+                className="absolute bottom-3 right-1 z-20 h-28 w-28 overflow-hidden rounded-3xl border-4 border-white shadow-xl sm:h-32 sm:w-32"
+              >
+                <img
+                  src={aloeVera}
+                  alt="Aloe Vera plant"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+                />
+              </motion.div>
+
+              {/* Floating badge */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.5,
+                }}
+                className="absolute bottom-8 right-3 z-30 flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md sm:right-6"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#edf3ec] text-[#315c3a]">
+                  <Leaf size={19} />
+                </div>
+
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.15em] text-stone-400">
+                    Plantora
+                  </p>
+
+                  <p className="text-sm font-semibold text-[#315c3a]">
+                    Grow beautifully
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Small floating label */}
+              <div className="absolute left-8 top-8 z-30 hidden rounded-full border border-white/70 bg-white/90 px-4 py-2 text-xs font-medium text-[#315c3a] shadow-lg backdrop-blur-md sm:block">
+                🌿 Plant with purpose
+              </div>
+            </div>
           </div>
-
-          <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Ready to grow something beautiful?
-          </h2>
-
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-white/55 sm:text-base">
-            Explore the Plantora collection and find a
-            plant that's perfect for your space.
-          </p>
-
-          <Link
-            to="/plants"
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[#315c3a] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f4f0e7]"
-          >
-            Explore Plants
-            <ArrowRight size={17} />
-          </Link>
         </motion.div>
       </section>
     </main>

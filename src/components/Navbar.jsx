@@ -14,10 +14,10 @@ function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
     { name: "Plants", path: "/plants" },
     { name: "Categories", path: "/categories" },
     { name: "Gardening Tips", path: "/gardening-tips" },
-    { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ]
 
@@ -40,22 +40,11 @@ function Navbar() {
       updateCartCount()
     }
 
-    window.addEventListener(
-      "storage",
-      handleStorageChange
-    )
-
-    window.addEventListener(
-      "plantora-cart-updated",
-      handleStorageChange
-    )
+    window.addEventListener("storage", handleStorageChange)
+    window.addEventListener("plantora-cart-updated", handleStorageChange)
 
     return () => {
-      window.removeEventListener(
-        "storage",
-        handleStorageChange
-      )
-
+      window.removeEventListener("storage", handleStorageChange)
       window.removeEventListener(
         "plantora-cart-updated",
         handleStorageChange
@@ -66,7 +55,6 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-stone-200/70 bg-[#fbfaf6]/95 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
-
         {/* Logo */}
         <Link
           to="/"
@@ -119,29 +107,20 @@ function Navbar() {
 
         {/* Actions */}
         <div className="flex items-center gap-2">
-
-          {/* Favorites */}
           <Link
             to="/favorites"
             className="hidden h-10 w-10 items-center justify-center rounded-full text-stone-600 transition-all duration-300 hover:bg-[#edf3ec] hover:text-[#315c3a] sm:flex"
             aria-label="Favorites"
           >
-            <Heart
-              size={20}
-              strokeWidth={1.8}
-            />
+            <Heart size={20} strokeWidth={1.8} />
           </Link>
 
-          {/* Cart */}
           <Link
             to="/cart"
             className="relative hidden h-10 w-10 items-center justify-center rounded-full text-stone-600 transition-all duration-300 hover:bg-[#edf3ec] hover:text-[#315c3a] sm:flex"
             aria-label="Shopping cart"
           >
-            <ShoppingBag
-              size={20}
-              strokeWidth={1.8}
-            />
+            <ShoppingBag size={20} strokeWidth={1.8} />
 
             {cartCount > 0 && (
               <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#315c3a] px-1 text-[10px] font-bold text-white shadow-sm">
@@ -150,26 +129,21 @@ function Navbar() {
             )}
           </Link>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="flex h-10 w-10 items-center justify-center rounded-full text-stone-700 transition-colors hover:bg-[#edf3ec] hover:text-[#315c3a] lg:hidden"
             aria-label="Toggle menu"
           >
-            {menuOpen ? (
-              <X size={23} />
-            ) : (
-              <Menu size={23} />
-            )}
+            {menuOpen ? <X size={23} /> : <Menu size={23} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       <div
         className={`overflow-hidden border-t border-stone-200/70 bg-[#fbfaf6] transition-all duration-300 lg:hidden ${
           menuOpen
-            ? "max-h-[500px] opacity-100"
+            ? "max-h-[600px] opacity-100"
             : "max-h-0 opacity-0"
         }`}
       >
@@ -192,8 +166,6 @@ function Navbar() {
           ))}
 
           <div className="flex gap-3 py-4">
-
-            {/* Mobile Favorites */}
             <Link
               to="/favorites"
               onClick={() => setMenuOpen(false)}
@@ -203,7 +175,6 @@ function Navbar() {
               Favorites
             </Link>
 
-            {/* Mobile Cart */}
             <Link
               to="/cart"
               onClick={() => setMenuOpen(false)}
@@ -214,9 +185,7 @@ function Navbar() {
 
               {cartCount > 0 && (
                 <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-white px-1 text-[10px] font-bold text-[#315c3a]">
-                  {cartCount > 99
-                    ? "99+"
-                    : cartCount}
+                  {cartCount > 99 ? "99+" : cartCount}
                 </span>
               )}
             </Link>
